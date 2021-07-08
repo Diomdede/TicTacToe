@@ -1,20 +1,17 @@
 /* Imports */
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@500&display=swap');
 
 /* Global */
-* {
-    font-family: 'PT Sans', sans-serif;
-}
 
 body, html {
-    color: green;
-    height: 100%;
+    color: #111D2B;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
 }
 
 /* Background Image */
 .game-wrapping {
     height: 100%;
-    width: 100%;
 }
 
 #game-background-image {
@@ -32,13 +29,24 @@ body, html {
 
 /* Board Body */
 .game-board-content {
-    height: fit-content;
     text-align: center;
 }
 
 /* Values Body */
 .game-values-content {
-    height: 200px;
+    font-family: 'Oswald', sans-serif;
     width: 100%;
+    text-transform: uppercase;
     text-align: center;
+}
+
+.game-values-content div {
+    background-color: aqua;
+    display: inline-block;
+    width: max-content;
+    height: fit-content;
+    padding: 5px;
+    margin-top: 5px;
+    /*-- border */
+    border-style: groove;
 }
