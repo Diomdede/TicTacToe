@@ -1,0 +1,36 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* Global */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body, html {
+    color: white;
+    background-color: aliceblue;
+    height: 100%;
+}
+
+/* Background Image */
+.game-wrapping {
+    background-image: url(/assets/images/game_background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Board Body */
+.game-board-content {
+    height: fit-content;
+    text-align: center;
+}
+
+/* Values Body */
+.game-values-content {
+    height: 200px;
+    width: 100%;
+    text-align: center;
+}
