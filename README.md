@@ -72,6 +72,8 @@ This is the main marketing website for Code Institute. It is designed to be resp
     - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
 1. [Coolors:](https://coolors.co/)
     - Coolors was used to generator a colour theme with selected primary colours.
+1. [colorzilla:](https://www.colorzilla.com/gradient-editor/)
+    - Was used to generate CSS gradient colours.
 
 
 ## Testing
@@ -208,11 +210,9 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -   All content was written by the developer.
 
--   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
-
 ### Media
 
--   [Background Image](https://images4.alphacoders.com/103/103324.jpg)
+-   [Background Image](https://www.bitzstore.com/blog/wp-content/uploads/2020/03/space-marines-chaos-imperium.jpg)
 
 -   [Audio theme](https://www.youtube.com/watch?v=fKR8zGnfcYI)
 

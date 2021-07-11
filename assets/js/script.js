@@ -5,28 +5,17 @@ const quizFactions = {
     "chaos" : "#7E3848",
     "imperium" : "#847143"
 }
+let onGoingQuiz = false
 let currentDifficulty = "easy"
 let currentFaction = "chaos"
 let currentSettings = {
-    music : true
+    music : true,
+    sound : true
 }
 // Wait for document to load
 document.addEventListener("DOMContentLoaded", function(event){
     generateContent()
 });
-
-// Updates settings
-function updateSettings(){
-    for (var setting in currentSettings) {
-        var settingElement = document.getElementsByClassName(setting)[0]
-        var settingStoredValue = currentSettings[setting]
-        if (settingStoredValue === true) {
-            settingElement.checked = true
-        } else {
-            settingElement.checked = false
-        }
-    }
-}
 
 // Generates a new quiz for the user
 function generateNewQuiz(){
@@ -44,8 +33,6 @@ function generateContent(){
     if (audio){
         audio.play()
     }
-    // Iterate settings
-    updateSettings();
     // Generate factions from faction list & force style selection element
     factionSelectElement.style.backgroundColor = quizFactions[currentFaction]
     factionSelectElement.style.color = "white"
@@ -65,6 +52,16 @@ factionSelectElement.addEventListener("change", function() {
     factionSelectElement.style.backgroundColor = quizFactions[currentFaction]
 })
 
-document.getElementsByClassName("music")[0].addEventListener("change", function() {
-    console.log("changed to " + this.checked)
-})
+// * checkboxes
+let checkboxes = document.querySelectorAll('input[type=checkbox]')
+for (let i of checkboxes) {
+    if (i.type == "checkbox") {
+        i.addEventListener("change", function(){
+            var setting = currentSettings[this.name]
+            if (setting == true) {
+                setting = this.value
+                console.log("updated value in js")
+            }
+        })
+    }
+}

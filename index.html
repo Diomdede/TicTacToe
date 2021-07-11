@@ -17,17 +17,24 @@
         <!-- Main Menu Elements -->
         <div class="game-selection">
             <!-- Faction & Difficulty Selection -->
-            <label for="faction"><strong>Faction :</strong></label>
+            <label class="select_label" for="faction"><strong>Faction :</strong></label>
             <select name="faction" id="faction"></select>
-            <label for="faction"><strong>Difficulty :</strong></label>
+            <label class="select_label" for="faction"><strong>Difficulty :</strong></label>
             <select name="difficulty" id="difficulty">
                 <option value="easy">EASY</option>
                 <option value="hard">HARD</option>
                 <option value="insane">INSANE</option>
             </select>
             <!-- Settings Selection -->
-            <label class="checkbox_labels" for="music">Background Music :</label>
-            <input type="checkbox" class="music" name="music" value=true>
+            <label class="select_label">
+                <strong>SETTINGS :</strong>
+            </label>
+            <label class="cb_label" for="music">
+                Background Music : <input type="checkbox" class="music" name="music" value=true checked=true>
+            </label>
+            <label class="cb_label" for="music">
+                Sound Effects : <input type="checkbox" class="sound" name="sound" value=true checked=true>
+            </label>
         </div>
         <!-- Game Values -->
         <div class="game-values-content">
