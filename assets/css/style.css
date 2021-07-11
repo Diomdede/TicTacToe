@@ -1,5 +1,5 @@
 /* Imports */
-@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Montserrat&family=Open+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;700&family=Montserrat&display=swap');
 
 /* Global */
 
@@ -35,9 +35,9 @@ body, html {
     justify-content: center;
     align-items: center;
     position: absolute;
+    flex-direction:column;
     top: 50%;
     left: 25%;
-    padding: 20px;
 }
 
 /* Board Body */
@@ -79,11 +79,18 @@ label {
     width: max-content;
     height: max-content;
     /* border */
-    border-style: ridge;
+    border-style: outset;
 }
 
 select {
-    border-style: ridge;
+    cursor: inherit;
+    line-height: inherit;
+    border-style: outset;
     width: max-content;
     height: max-content;
+    font-family: 'Heebo', sans-serif;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
