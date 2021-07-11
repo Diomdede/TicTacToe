@@ -27,6 +27,21 @@ body, html {
     z-index: -1;
 }
 
+/* Header */
+h1 {
+    font-family: 'Heebo', sans-serif;
+    text-align: center;
+    background-color: whitesmoke;
+    color: black;
+    border-style: outset;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
 /* Selection Body */
 .game-selection {
     height: max-content;
@@ -51,19 +66,24 @@ body, html {
     width: 100%;
     text-transform: uppercase;
     text-align: center;
-    visibility: collapse;
 }
 
-.game-values-content div {
-    background-color: #111D2B;
-    color: white;
+.game-values-content > div {
+    font-family: 'Heebo', sans-serif;
+    width: max-content;
+    height: max-content;
+    color: black;
+    background-color: whitesmoke;
     display: inline-block;
     width: max-content;
     height: fit-content;
     padding: 5px;
     margin-top: 5px;
-    /*-- border */
-    border-style: groove;
+    border-style: outset;
+}
+
+#game-question-current {
+    background-color: cornsilk;
 }
 
 /* Inputs & Labels */

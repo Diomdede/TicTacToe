@@ -9,11 +9,14 @@
 </head>
 
 <body>
+    <!-- Header -->
+    <h1><strong>WARHAMMER: 40K</strong> TRIVIA</h1>
     <!-- Game Elements -->
     <div id="game-background-image"></div>
     <div class="game-wrapping">
         <!-- Main Menu Elements -->
         <div class="game-selection">
+            <!-- Faction & Difficulty Selection -->
             <label for="faction"><strong>Faction :</strong></label>
             <select name="faction" id="faction"></select>
             <label for="faction"><strong>Difficulty :</strong></label>
@@ -22,8 +25,9 @@
                 <option value="hard">HARD</option>
                 <option value="insane">INSANE</option>
             </select>
-            <combo>
-            </combo>
+            <!-- Settings Selection -->
+            <label class="checkbox_labels" for="music">Background Music :</label>
+            <input type="checkbox" id="music" name="music" value="toggle_music">
         </div>
         <!-- Game Values -->
         <div class="game-values-content">
