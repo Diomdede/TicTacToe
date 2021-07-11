@@ -7,10 +7,26 @@ const quizFactions = {
 }
 let currentDifficulty = "easy"
 let currentFaction = "chaos"
+let currentSettings = {
+    music : true
+}
 // Wait for document to load
 document.addEventListener("DOMContentLoaded", function(event){
     generateContent()
 });
+
+// Updates settings
+function updateSettings(){
+    for (var setting in currentSettings) {
+        var settingElement = document.getElementsByClassName(setting)[0]
+        var settingStoredValue = currentSettings[setting]
+        if (settingStoredValue === true) {
+            settingElement.checked = true
+        } else {
+            settingElement.checked = false
+        }
+    }
+}
 
 // Generates a new quiz for the user
 function generateNewQuiz(){
@@ -28,6 +44,8 @@ function generateContent(){
     if (audio){
         audio.play()
     }
+    // Iterate settings
+    updateSettings();
     // Generate factions from faction list & force style selection element
     factionSelectElement.style.backgroundColor = quizFactions[currentFaction]
     factionSelectElement.style.color = "white"
@@ -45,4 +63,8 @@ function generateContent(){
 factionSelectElement.addEventListener("change", function() {
     currentFaction = this.value.toLowerCase()
     factionSelectElement.style.backgroundColor = quizFactions[currentFaction]
+})
+
+document.getElementsByClassName("music")[0].addEventListener("change", function() {
+    console.log("changed to " + this.checked)
 })
