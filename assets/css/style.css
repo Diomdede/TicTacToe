@@ -1,11 +1,11 @@
 /* Imports */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Montserrat&family=Open+Sans&family=Roboto&display=swap');
 
 /* Global */
 
 body, html {
     color: #111D2B;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0 auto;
 }
 
@@ -18,13 +18,27 @@ body, html {
     background-image: url(/assets/images/game_background.jpg);
     background-position: right;
     background-repeat: no-repeat;
-    background-size: fill;
+    background-size: cover;
     height: 100%;
     width: 100%;
     overflow: hidden;
     position: fixed;
     top: 0;
     z-index: -1;
+}
+
+/* Selection Body */
+.game-selection {
+    height: max-content;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    padding: 20px;
+    background-color: blueviolet;
 }
 
 /* Board Body */
@@ -34,7 +48,7 @@ body, html {
 
 /* Values Body */
 .game-values-content {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Heebo', sans-serif;
     width: 100%;
     text-transform: uppercase;
     text-align: center;
@@ -51,4 +65,12 @@ body, html {
     margin-top: 5px;
     /*-- border */
     border-style: groove;
+}
+
+/* Inputs & Labels */
+label {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Heebo', sans-serif;
+    color: white;
 }

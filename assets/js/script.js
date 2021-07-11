@@ -5,7 +5,8 @@ const quizFactions = {
     "chaos" : "#7E3848",
     "imperium" : "#847143"
 }
-let currentFaction = "Chaos"
+let currentDifficulty = "easy"
+let currentFaction = "chaos"
 // Wait for document to load
 document.addEventListener("DOMContentLoaded", function(event){
     generateContent()
@@ -13,11 +14,17 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 // Generates a new quiz for the user
 function generateNewQuiz(){
+    // Users current score(s)
+    var questionScore = {
+        totalQuestions : 10, // Total amount of questions in the quiz
+        currentQuestion: 0, // Current question the user is on
+        totalAnswered : 0, // Total amount of questions the user has answered
+    }
 }
 // Generates the quiz (for when the website loads!)
 function generateContent(){
     // Play background theme!
-    var audio = new Audio("/assets/audio/chaos_theme.mp3")
+    var audio = new Audio(false) ///assets/audio/chaos_theme.mp3
     if (audio){
         audio.play()
     }
@@ -26,7 +33,6 @@ function generateContent(){
     factionSelectElement.style.color = "white"
     var factionHTML = ``
     for (var i in quizFactions){
-        console.log(i)
         var newFaction = `
         <option style="color:white;background-color:${quizFactions[i]}" value=${i.toLowerCase()}>${i.toUpperCase()}</option>
         `
@@ -38,12 +44,5 @@ function generateContent(){
 // Listeners
 factionSelectElement.addEventListener("change", function() {
     currentFaction = this.value.toLowerCase()
-    console.log(currentFaction)
     factionSelectElement.style.backgroundColor = quizFactions[currentFaction]
-});
-
-const questionScore = {
-    totalQuestions : 10, // Total amount of questions in the quiz
-    currentQuestion: 0, // Current question the user is on
-    totalAnswered : 0, // Total amount of questions the user has answered
-}
+})
