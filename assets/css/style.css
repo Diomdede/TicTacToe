@@ -38,7 +38,6 @@ body, html {
     top: 50%;
     left: 25%;
     padding: 20px;
-    background-color: blueviolet;
 }
 
 /* Board Body */
@@ -73,4 +72,18 @@ label {
     text-transform: uppercase;
     font-family: 'Heebo', sans-serif;
     color: white;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: whitesmoke;
+    color: black;
+    width: max-content;
+    height: max-content;
+    /* border */
+    border-style: ridge;
+}
+
+select {
+    border-style: ridge;
+    width: max-content;
+    height: max-content;
 }
