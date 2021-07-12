@@ -10,16 +10,18 @@
 
 <body>
     <!-- Header -->
-    <h1><strong>WARHAMMER: 40K</strong> TRIVIA</h1>
+    <hr>
+    <h1 class="faction_color"><strong>WARHAMMER: 40K</strong> TRIVIA</h1>
+    <h2 class="faction_color">Can you answer all the questions?</h2>
     <!-- Game Elements -->
     <div id="game-background-image"></div>
     <div class="game-wrapping">
         <!-- Main Menu Elements -->
         <div class="game-selection">
             <!-- Faction & Difficulty Selection -->
-            <label class="select_label" for="faction"><strong>Faction :</strong></label>
+            <label class="select_label" for="faction"><strong>Faction <i class="fas fa-level-down-alt"></i></strong></label>
             <select name="faction" id="faction"></select>
-            <label class="select_label" for="faction"><strong>Difficulty :</strong></label>
+            <label class="select_label" for="difficulty"><strong>Difficulty <i class="fas fa-level-down-alt"></i></strong></label>
             <select name="difficulty" id="difficulty">
                 <option value="easy">EASY</option>
                 <option value="hard">HARD</option>
@@ -27,14 +29,16 @@
             </select>
             <!-- Settings Selection -->
             <label class="select_label">
-                <strong>SETTINGS :</strong>
+                <strong>SETTINGS <i class="fas fa-level-down-alt"></i></strong>
             </label>
-            <label class="cb_label" for="music">
-                Background Music : <input type="checkbox" class="music" name="music" value=true checked=true>
+            <label class="cb_label" for="cb_music">
+                Background Music <i class="fas fa-long-arrow-alt-right"></i> <input type="checkbox" id="cb_music" class="cb_music" name="cb_music" value="true" checked>
             </label>
-            <label class="cb_label" for="music">
-                Sound Effects : <input type="checkbox" class="sound" name="sound" value=true checked=true>
+            <label class="cb_label" for="cb_sound">
+                Sound Effects <i class="fas fa-long-arrow-alt-right"></i> <input type="checkbox" id="cb_sound" class="cb_sound" name="cb_sound" value="true" checked>
             </label>
+            <!-- Create Game Selection -->
+            <button class="quiz_button_create">CREATE QUIZ</button>
         </div>
         <!-- Game Values -->
         <div class="game-values-content">
@@ -52,6 +56,9 @@
             </div>
         </div>
     </div>
+    <footer>
+        <hr>
+    </footer>
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/4689e9d351.js" crossorigin="anonymous"></script>
