@@ -12,13 +12,18 @@
     <!-- Header -->
     <hr>
     <h1 class="faction_color"><strong>WARHAMMER: 40K</strong> TRIVIA</h1>
-    <h2 class="faction_color">Can you answer all the questions?</h2>
+    <h2 class="faction_color" id="faction_motto">PREPARE FOR DEPLOYMENT, BROTHER.</h2>
     <!-- Game Elements -->
     <div id="game-background-image"></div>
     <div class="game-wrapping">
         <!-- Main Menu Elements -->
         <div class="game-selection">
             <!-- Faction & Difficulty Selection -->
+            <label class="title_label">
+                <strong> SETTINGS</strong>
+            </label>
+            <label class="select_label" for="username"><strong>Name <i class="fas fa-level-down-alt"></i></strong></label>
+            <input type="text" id="username" name="username">
             <label class="select_label" for="faction"><strong>Faction <i class="fas fa-level-down-alt"></i></strong></label>
             <select name="faction" id="faction"></select>
             <label class="select_label" for="difficulty"><strong>Difficulty <i class="fas fa-level-down-alt"></i></strong></label>
@@ -29,7 +34,7 @@
             </select>
             <!-- Settings Selection -->
             <label class="select_label">
-                <strong>SETTINGS <i class="fas fa-level-down-alt"></i></strong>
+                <strong>AUDIO <i class="fas fa-level-down-alt"></i></strong>
             </label>
             <label class="cb_label" for="cb_music">
                 Background Music <i class="fas fa-long-arrow-alt-right"></i> <input type="checkbox" id="cb_music" class="cb_music" name="cb_music" value="true" checked>
@@ -38,7 +43,7 @@
                 Sound Effects <i class="fas fa-long-arrow-alt-right"></i> <input type="checkbox" id="cb_sound" class="cb_sound" name="cb_sound" value="true" checked>
             </label>
             <!-- Create Game Selection -->
-            <button class="quiz_button_create">CREATE QUIZ</button>
+            <button class="quiz_button_create" id="quiz_button_create" onclick="generateNewQuiz()">CREATE</button>
         </div>
         <!-- Game Values -->
         <div class="game-values-content">

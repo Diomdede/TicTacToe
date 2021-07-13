@@ -1,5 +1,6 @@
 // Define globally used elements
 let factionSelectElement = document.getElementById("faction");
+let factionMottoElement = document.getElementById("faction_motto");
 let hrElement = document.getElementsByTagName("hr");
 let backgroundImageElement = document.getElementById("game-background-image");
 // Default settings for new quizes
@@ -14,12 +15,15 @@ let currentSettings = { // default settings
     cb_music : true,
     cb_sound : true
 };
+
 // Wait for document to load
 document.addEventListener("DOMContentLoaded", function(event){
     generateContent();
 });
 
-// Generates a new quiz for the user
+/// Functions
+
+// * Generates a new quiz for the user
 function generateNewQuiz(){
     // Users current score(s)
     var questionScore = {
@@ -27,8 +31,10 @@ function generateNewQuiz(){
         currentQuestion: 0, // Current question the user is on
         totalAnswered : 0, // Total amount of questions the user has answered
     };
+    document.getElementById("quiz_button_create").textContent = "CONFIRM?"
+  //  document.getElementsByClassName("game-selection")[0].style.visibility = "hidden"
 }
-// Generates the quiz (for when the website loads!)
+// * Generates the quiz (for when the website loads!)
 function generateContent(){
     // Play background theme!
     var audio = new Audio(false); ///assets/audio/chaos_theme.mp3
@@ -49,7 +55,9 @@ function generateContent(){
     factionSelectElement.innerHTML = factionHTML;
 }
 
-// Listeners
+// Listeners //
+
+// * Attach a change listener event to faction selection
 factionSelectElement.addEventListener("change", function() {
     currentFaction = this.value.toLowerCase();
     factionSelectElement.style.backgroundColor = quizFactions[currentFaction][0];
@@ -57,16 +65,23 @@ factionSelectElement.addEventListener("change", function() {
     var faction_elements = document.getElementsByClassName("faction_color");
     // Iterate all hrs
     for (var hr of hrElement) {
-        console.log(hr)
         hr.style.background = quizFactions[currentFaction][1]
     }
     // Iterate all faction elements
     for (var faction_element of faction_elements) {
         faction_element.style.background = quizFactions[currentFaction][1]
     }
+    switch (currentFaction) {
+        case "imperium":
+            factionMottoElement.style.textContent = "PREPARE FOR DEPLOYMENT, BROTHER."
+            break;
+        case "chaos":
+            factionMottoElement.style.textContent = "BLOOD FOR THE BLOOD GOD!"
+            break;     
+    }
 });
 
-// * checkboxes
+// * Attach listen events to all checkboxes
 let checkboxes = document.querySelectorAll('input[type=checkbox]');
 for (let i of checkboxes) {
     if (i.type == "checkbox") {
