@@ -11,10 +11,6 @@ const quizFactions = {
 ;
 let currentDifficulty = "easy"; // default difficulty
 let currentFaction = "imperium"; // default faction
-let currentSettings = { // default settings
-    cb_music : true,
-    cb_sound : true
-};
 
 // Wait for document to load
 document.addEventListener("DOMContentLoaded", function(event){
@@ -31,13 +27,15 @@ function generateNewQuiz(){
         currentQuestion: 0, // Current question the user is on
         totalAnswered : 0, // Total amount of questions the user has answered
     };
-    document.getElementById("quiz_button_create").textContent = "CONFIRM?"
-  //  document.getElementsByClassName("game-selection")[0].style.visibility = "hidden"
+    // Hide all our select elements & show quiz elements
+    document.getElementsByClassName("game-selection")[0].style.visibility = "hidden"
+    document.getElementsByClassName("game-values-content")[0].style.visibility = "visible"
+    factionMottoElement.style.visibility = "hidden"
 }
 // * Generates the quiz (for when the website loads!)
 function generateContent(){
     // Play background theme!
-    var audio = new Audio(false); ///assets/audio/chaos_theme.mp3
+    var audio = new Audio("/assets/audio/chaos_theme.mp3");
     if (audio){
         audio.play();
     }
@@ -73,24 +71,10 @@ factionSelectElement.addEventListener("change", function() {
     }
     switch (currentFaction) {
         case "imperium":
-            factionMottoElement.style.textContent = "PREPARE FOR DEPLOYMENT, BROTHER."
+            factionMottoElement.textContent = "PREPARE FOR DEPLOYMENT, BROTHER."
             break;
         case "chaos":
-            factionMottoElement.style.textContent = "BLOOD FOR THE BLOOD GOD!"
+            factionMottoElement.textContent = "BLOOD FOR THE BLOOD GOD!"
             break;     
     }
 });
-
-// * Attach listen events to all checkboxes
-let checkboxes = document.querySelectorAll('input[type=checkbox]');
-for (let i of checkboxes) {
-    if (i.type == "checkbox") {
-        i.addEventListener("change", function(){
-            var setting = currentSettings[this.name];
-            if (setting == true) {
-                setting = this.value;
-                console.log("updated value in js");
-            }
-        });
-    }
-}

@@ -11,54 +11,53 @@
 <body>
     <!-- Header -->
     <hr>
-    <h1 class="faction_color"><strong>WARHAMMER: 40K</strong> TRIVIA</h1>
-    <h2 class="faction_color" id="faction_motto">PREPARE FOR DEPLOYMENT, BROTHER.</h2>
+    <h1 class="faction_color">WARHAMMER: 40K TRIVIA</h1>
+    <p class="faction_color" id="faction_motto">PREPARE FOR DEPLOYMENT, BROTHER.</p>
     <!-- Game Elements -->
     <div id="game-background-image"></div>
     <div class="game-wrapping">
         <!-- Main Menu Elements -->
+                <!-- Game Values -->
+                <div class="game-values-content">
+                    <div class="faction_color" id="game-question-amount">Current Question : 1</div>
+                    <div class="faction_color"id="game-question-total">Total Questions : 10</div>
+                    <div class="faction_color"id="game-question-current">Answered : 0</div>
+                </div>
+                <!-- Game Play Area -->
+                <div class="game-board-content">
+                    <div id="game-current-question">
+                        Question?
+                    </div>
+                    <div id="game-player-answer">
+                        <div class="faction_color game-answer" id="game-answer-a">
+                            <h5>A</h5>
+                            <h2 class="first">F</h2>
+                            <h4>F</h4></div>
+                        <div class="faction_color game-answer" id="game-answer-b">
+                            <h2>A</h2>
+                            <h4>CHAOS</h4></div>
+                        <div class="faction_color game-answer" id="game-answer-c">
+                            <h2>A</h2>
+                            <h4>CHAOS</h4></div>
+                    </div>
+                </div>
         <div class="game-selection">
             <!-- Faction & Difficulty Selection -->
             <label class="title_label">
-                <strong> SETTINGS</strong>
+                <strong>CREATE YOUR QUIZ</strong>
             </label>
             <label class="select_label" for="username"><strong>Name <i class="fas fa-level-down-alt"></i></strong></label>
-            <input type="text" id="username" name="username">
-            <label class="select_label" for="faction"><strong>Faction <i class="fas fa-level-down-alt"></i></strong></label>
+            <input type="text" id="username" name="username" placeholder="USERNAME">
+            <label class="select_label" for="faction"><strong>Topic <i class="fas fa-level-down-alt"></i></strong></label>
             <select name="faction" id="faction"></select>
             <label class="select_label" for="difficulty"><strong>Difficulty <i class="fas fa-level-down-alt"></i></strong></label>
             <select name="difficulty" id="difficulty">
-                <option value="easy">EASY</option>
-                <option value="hard">HARD</option>
-                <option value="insane">INSANE</option>
+                <option value="easy"><strong>RECRUIT</strong></option>
+                <option value="hard"><strong>MARINE</strong></option>
+                <option value="insane"><strong>DEATH </strong></option>
             </select>
-            <!-- Settings Selection -->
-            <label class="select_label">
-                <strong>AUDIO <i class="fas fa-level-down-alt"></i></strong>
-            </label>
-            <label class="cb_label" for="cb_music">
-                Background Music <i class="fas fa-long-arrow-alt-right"></i> <input type="checkbox" id="cb_music" class="cb_music" name="cb_music" value="true" checked>
-            </label>
-            <label class="cb_label" for="cb_sound">
-                Sound Effects <i class="fas fa-long-arrow-alt-right"></i> <input type="checkbox" id="cb_sound" class="cb_sound" name="cb_sound" value="true" checked>
-            </label>
             <!-- Create Game Selection -->
-            <button class="quiz_button_create" id="quiz_button_create" onclick="generateNewQuiz()">CREATE</button>
-        </div>
-        <!-- Game Values -->
-        <div class="game-values-content">
-            <div id="game-question-amount">Current Question : 1</div>
-            <div id="game-question-total">Total Questions : 10</div>
-            <div id="game-question-current">Answered : 0</div>
-        </div>
-        <!-- Game Play Area -->
-        <div class="game-board-content">
-            <div id="game-current-question">
-                Question?
-            </div>
-            <div id="game-player-answer">
-                Answer?
-            </div>
+            <button class="quiz_button_create" id="quiz_button_create" onclick="generateNewQuiz()"><strong>PLAY</strong></button>
         </div>
     </div>
     <footer>
